@@ -4,7 +4,7 @@
     "height": 25,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["cpu", "memory", "clock#time", "clock#date", "tray"],
+    "modules-right": ["memory", "clock#time", "clock#date"],
     "sway/window": {
         "max-length": 50
     },
@@ -26,8 +26,8 @@
         "format": "   {}"
     },
     "pulseaudio": {
-    "format": "{volume}% {icon}",
-    "format-bluetooth": "{volume}% {icon}",
+    "format": "{volume}% volume",
+    "format-bluetooth": "{volume}%",
     "format-muted": "",
     "format-icons": {
         "headphone": "",
@@ -42,7 +42,7 @@
     "on-click-right": "pavucontrol"
     },
     "battery": {
-        "format": "{capacity}% {icon}",
+        "format": "{capacity}% battery",
         "format-icons": ["", "", "", "", ""]
     },
     "clock#time": {

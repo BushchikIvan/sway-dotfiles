@@ -4,13 +4,21 @@ input * {
     xkb_file ~/.config/sway/keymap.xkb
     
 }
+
 output * bg ~/.config/sway/wallpaper.jpg fill
-output * scale 2
+output * scale 1.3
+
 bar
 {
     swaybar_command waybar
 }
+
 include themes/breeze-sway
+
+exec swayidle -w timeout 45 "swaylock -f -c 000000"
+exec swayidle -w timeout 60 "swaymsg "output * dpms off"
+exec swayidle -w resume "swaymsg "output * dpms on"
+
 set $meta Mod4
 set $term kitty
 set $mod alt
@@ -18,10 +26,9 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $filter nemo
-set $browser firefox
-assign [app_id="firefox"] workspace 2
-assign [app_id="pcmanfm-qt"] workspace 3
+
+set $filter pcmanfm-qt
+set $browser "firefox --new-window ya.ru"
 bindsym $mod+Return exec $term
 bindsym $meta+e exec $filter
 bindsym $meta+f exec $browser
